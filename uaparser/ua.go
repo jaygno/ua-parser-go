@@ -1,31 +1,37 @@
 package uaparser
 
+// Borwser
 type Browser struct {
 	Name    string
 	Version string
 	Major   string
 }
 
+// Cpu
 type Cpu struct {
 	Architecture string
 }
 
+// Engine
 type Engine struct {
 	Name    string
 	Version string
 }
 
+// OS
 type OS struct {
 	Name    string
 	Version string
 }
 
+// Device
 type Device struct {
 	Vendor string
 	Model  string
 	Type   string
 }
 
+// UserAgent
 type UserAgent struct {
 	UA []byte
 	*Browser
@@ -46,6 +52,7 @@ func (u *UserAgent) parse() error {
 	return nil
 }
 
+// Parse
 func Parse(ua []byte) (*UserAgent, error) {
 	uagent := &UserAgent{
 		UA: ua,

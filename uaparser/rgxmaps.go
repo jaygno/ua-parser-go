@@ -269,7 +269,7 @@ var rgxMaps map[string][]*BrowserParser = map[string][]*BrowserParser{
 				regexp.MustCompile(`(?i)webkit.+?(mobile ?safari|safari)(\/[\w\.]+)`),
 			},
 			VersionIdx:    2, // TODO FIX get version
-			VersionParser: SafariMap,
+			VersionParser: oldSafariParser,
 			NameIndex:     1,
 		}, &BrowserParser{
 			Expr: []*regexp.Regexp{
